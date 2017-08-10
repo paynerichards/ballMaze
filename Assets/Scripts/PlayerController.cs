@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
 
 	public float speed;
+	public float force = 9.8f;
 	public Text countText;
 	public Text winText;
+	public Vector3 dir;
 
 	private Rigidbody rb;
 	private int count;
@@ -29,7 +31,13 @@ public class PlayerController : MonoBehaviour {
 		Vector3 movement = new Vector3 (moveHorizontal, 0, moveVertical);
 
 		rb.AddForce (movement * speed);
-//		transform.Translate(Input.acceleration.x, 0, -Input.acceleration.z);
+
+
+
+		dir.x = Input.acceleration.x;
+		dir.z = Input.acceleration.y;
+		Physics.gravity = dir * force;
+
 	}
 
 	void OnTriggerEnter(Collider other)

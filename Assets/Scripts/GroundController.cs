@@ -36,6 +36,6 @@ public class GroundController : MonoBehaviour {
 //		
 		Quaternion gyro2 = Input.gyro.attitude; 
 
-		rb.transform.rotation = new Quaternion ( gyro2.x, -gyro2.z, gyro2.y, -gyro2.w);
+		rb.transform.rotation = new Quaternion (gyro2.x, 0, gyro2.y, -gyro2.w);
 	}
 }
