@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour {
 
 	void SetCountText ()
 	{
-		countText.text = "Count: " + count.ToString () + "/13";
+		countText.text = "Cubes: " + count.ToString () + "/13";
 		if (count >= 13) 
 		{
 			winText.text = "You Win";
