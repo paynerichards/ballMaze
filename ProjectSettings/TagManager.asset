@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - PickUp
+  - MazeWall
+  - WinPanel
   layers:
   - Default
   - TransparentFX

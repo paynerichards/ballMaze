@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
 	public Text countText;
 	public Text winText;
 	public Vector3 dir;
+	public GameObject winPanel;
 
 	private Rigidbody rb;
 	private int count;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour {
 		count = 0;
 		SetCountText ();
 		winText.text = "";
+		winPanel.SetActive (false);
 	}
 
 	void FixedUpdate ()
@@ -47,15 +49,17 @@ public class PlayerController : MonoBehaviour {
 			other.gameObject.SetActive (false);
 			count = count + 1;
 			SetCountText ();
+
 		}
 	}
 
 	void SetCountText ()
 	{
-		countText.text = "Count: " + count.ToString ();
+		countText.text = "Count: " + count.ToString () + "/13";
 		if (count >= 13) 
 		{
 			winText.text = "You Win";
+			winPanel.SetActive (true);
 		}
 	}
 }
